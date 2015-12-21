@@ -33,11 +33,11 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'guanye',
-#    'django.contrib.auth',
+    'django.contrib.auth',
     'django.contrib.contenttypes',
-#    'django.contrib.sessions',
-#    'django.contrib.messages',
-#    'django.contrib.staticfiles',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -113,6 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
+#LANGUAGE_CODE = 'zh-CN'
 LANGUAGE_CODE = 'en-us'
 
 #TIME_ZONE = 'Asia/Shanghai'

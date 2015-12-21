@@ -19,4 +19,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'login/','mysite.views.login'),
+    url(r'^acco/logout/$',mysite.views.logout),
+    url(r'^acco/changepwd/$','mysite.views.changepwd'),
 ]

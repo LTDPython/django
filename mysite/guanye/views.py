@@ -29,7 +29,7 @@ def login(request):
             user = auth.authenticate(username=username,password=password)
             if user is not None and user.is_active:
                 auth.login(request,user)
-                return render_to_response('index-myself.html',RequestContext(request))
+                return render_to_response('index.html',RequestContext(request))
             else:
                 return render_to_response('login.html',RequestContext(request,{'form':form,'password_is_wrong':True}))
         else:
@@ -39,3 +39,25 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect("/accounts/login/")
+
+@login_required
+def changepwd(request):
+    if request.method == 'GET':
+        form = ChangepwdForm()
+        return render_to_response('changepwd.html',RequestContext(request,{'form':form,}))
+    else:
+        form = ChangepwdForm(request.POST)
+        if form.is_valid():
+            username = request.user.username
+            oldpasswd = request.POST.get('oldpasswd','')
+            user = auth.authenticate(username=username,password=oldpasswd)
+            if user is not None and user.is_active:
+                newpasswd = request.POST.get('newpasswd1','')
+                user.set_password(newpasswd)
+                user.save()
+                return render_to_response('index.html',RequestContext(request,{'changepwd_success':True}))
+            else:
+                return render_to_response('changepwd.html',RequestContext(request,{'form':form,'oldpassword_is_wrong':True}))
+        else:
+            return render_to_response('changepwd.html',RequestContext(request,{'form':form,}))
+
