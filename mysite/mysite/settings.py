@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'MyFirst.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'python',
+        'NAME':'guanye',
         'USER':'root',
         'PASSWORD':'123qweASDzxc!',
         'HOST':'localhost',
@@ -115,7 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Shanghai'
+#TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
