@@ -15,7 +15,8 @@ from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from bootstrap_toolkit.widgets import BootstrapUneditableInput
 from django.contrib.auth.decorators import login_required
 
-from .forms import LoginForm
+from mysite.form import LoginForm
+#from .forms import LoginForm
 
 def login(request):
     if request.method == 'GET':

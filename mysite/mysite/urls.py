@@ -19,7 +19,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'login/','mysite.views.login'),
-    url(r'^acco/logout/$',mysite.views.logout),
-    url(r'^acco/changepwd/$','mysite.views.changepwd'),
+#    url(r'^login/',guanye.views.login),
+#    url(r'^login/$',guanye,name=login),
+    url(r'^acco/login/$','guanye.views.login'),
+    url(r'^acco/logout/$','guanye.views.logout'),
+    url(r'^acco/changepwd/$','guanye.views.changepwd'),
 ]
+

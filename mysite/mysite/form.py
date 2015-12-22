@@ -32,7 +32,7 @@ class LoginForm(forms.Form):
 
 class ChangepwdForm(forms.Form):
     oldpasswd = forms.CharField(
-        required=True
+        required=True,
         label=u"原密码",
         error_messages={'required':u'请输入原密码'},
         widget=forms.PasswordInput(
